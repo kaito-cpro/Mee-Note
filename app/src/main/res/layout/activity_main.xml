@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MeeNote.AppBarOverlay">
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="?attr/colorPrimary"-->
+<!--            android:visibility="gone"-->
+<!--            app:popupTheme="@style/Theme.MeeNote.PopupOverlay" />-->
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
+
+    <!-- 追加：ここから  -->
+<!--    <ImageView-->
+<!--        android:id="@+id/background_image"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <!-- キャンバス -->
+    <com.example.meenote.CanvasView
+        android:id="@+id/canvas_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 右側のボタン -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right|top">
+
+        <!-- ページ番号 -->
+        <TextView
+            android:id="@+id/page_text"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="4dp"
+            android:gravity="right"
+            android:text="1" />
+
+        <!-- shift 値変更ボタン -->
+        <Button
+            android:id="@+id/shift_setting_button"
+            android:layout_width="20dp"
+            android:layout_height="36dp"
+            android:layout_alignBottom="@id/canvas_view"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="1dp"
+            android:alpha="0.5"
+            app:backgroundTint="#F80C0C" />
+
+    </LinearLayout>
+
+    <!-- 右側のボタン -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right|top">
+
+        <!-- マーカーボタン -->
+        <Button
+            android:id="@+id/marker_button"
+            android:layout_width="20dp"
+            android:layout_height="36dp"
+            android:layout_alignBottom="@id/canvas_view"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="28dp"
+            android:alpha="0.5"
+            app:backgroundTint="#00EAFF" />
+
+    </LinearLayout>
+
+    <!-- 下部のボタン -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right|bottom"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center">
+
+        <!-- prev ボタン -->
+        <Button
+            android:id="@+id/prev_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@id/canvas_view"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="1dp"
+            android:alpha="0.5"
+            android:text="＜"
+            app:backgroundTint="#F17000" />
+
+        <!-- next ボタン -->
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@id/canvas_view"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="5dp"
+            android:alpha="0.5"
+            android:text="＞"
+            app:backgroundTint="#F17000" />
+
+        <!-- undo ボタン -->
+        <Button
+            android:id="@+id/undo_button"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@id/canvas_view"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:alpha="0.5"
+            android:text="戻す"
+            app:backgroundTint="#079A5F" />
+
+        <!-- 色変更用ボタン -->
+        <Button
+            android:id="@+id/change_color_button"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@id/canvas_view"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:alpha="0.5"
+            android:text="色"
+            app:backgroundTint="#000000" />
+
+        <!-- ペン変更用ボタン -->
+        <Button
+            android:id="@+id/change_pen_button"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@id/canvas_view"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="8dp"
+            android:alpha="0.5"
+            android:text="消す"
+            app:backgroundTint="#237EBA" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
