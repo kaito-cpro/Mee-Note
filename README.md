@@ -2,10 +2,11 @@
 simple note application for Android
 
 # Main Files
-MainActivity.java  
-CanvasView.java  
-activity_main.xml  
-AndroidManifest.xml
+* MainActivity.java  
+* CanvasView.java  
+* activity_main.xml  
+* themes.xml
+* AndroidManifest.xml
 
 # Features
 * 黒と赤の線を書けます
